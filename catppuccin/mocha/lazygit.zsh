@@ -1,0 +1,1 @@
+cp lazygit.yml $HOME/.config/lazygit/config.yml
