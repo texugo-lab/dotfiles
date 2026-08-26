@@ -1,45 +1,45 @@
+#---------------------- PLUGIN ----------------------#
+source "plugins.zsh" # DO NOT REMOVE
+
+# zpluginload <USER_NAME>  <-REPOSITORY_NAME->
+
+zpluginload zsh-users zsh-syntax-highlighting
+zpluginload zsh-users zsh-autosuggestions
+zpluginload zsh-users zsh-history-substring-search
+
+# AUTOLOAD
+autoload zmv
+
+# EVALS
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
 #---------------------- CONFIG ----------------------#
-export FLAVOUR='macchiato'
+setFlavor Macchiato
 #     Possible values:
-#        'mocha'
-#        'macchiato' -> DEFAULT
-#        'frappe'
-#        'latte'
-#     To add any more flavour based config, make
+#        Mocha
+#        Macchiato -> DEFAULT
+#        Frappe
+#        Latte
+#     To add any more flavor based config, make
 #   sure to follow these steps: 
 #        1- add a '.zsh' or '.sh' file to the
-#        catppuccin/FLAVOUR that you want,
+#        catppuccin/FLAVOR that you want,
 #        preferebly on all
 
+export EDITOR='nvim' # EDITOR
+
 #----------------------- CODE -----------------------#
-# ZINIT
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-source "${ZINIT_HOME}/zinit.zsh"
-
-# PLUGINS
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
-zinit snippet OMZP::command-not-found
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
 # BINDINGS
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[w' kill-region
+#     COMMAND-LINE EDIT
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e'
+
+# CHPWD
+chpwd() {
+   eza
+}
 
 # HISTORY
 HISTSIZE=5000
@@ -63,27 +63,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza $realpath'
 
 # ALIAS
 alias ls='eza'
-export win='/mnt/c/users/daniel'
+alias mv='zmv'
+alias -s c='$EDITOR'
+alias -s h='$EDITOR'
 
-# EVALS
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
-# FLAVOURS
-if [ "$FLAVOUR" == "mocha" ]; then
-   # MOCHA
-   source "catppuccin/mocha/*.sh"
-   source "catppuccin/mocha/*.zsh"
-elif [ "$FLAVOUR" == "frappe" ]; then
-   # FRAPPE
-   source "catppuccin/frappe/*.sh"
-   source "catppuccin/frappe/*.zsh"
-elif [ "$FLAVOUR" == "latte" ]; then
-   # LATTE
-   source "catppuccin/latte/*.sh"
-   source "catppuccin/latte/*.zsh"
-else
-   # MACCHIATO
-   source "catppuccin/macchiato/*.sh"
-   source "catppuccin/macchiato/*.zsh"
-fi
+reloadFlavor # KEEP THIS AT THE VERY BOTTOM
