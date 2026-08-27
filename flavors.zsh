@@ -1,40 +1,38 @@
-dfFlavor='macchiato'
-setFlavor() {
-    if [[ "${1}" == "Mocha" ]]; then
-        export ZSHFLAVOR="mocha"
-    elif [[ "${1}" == "Macchiato" ]]; then
-        export ZSHFLAVOR="macchiato"
-    elif [[ "${1}" == "Frappe" ]]; then
-        export ZSHFLAVOR="frappe"
-    elif [[ "${1}" == "Latte" ]]; then
-        export FZSHLAVOR="latte"
-    else
-        echo "Flavor not found, changing to default (Macchiato)"
-        export ZSHFLAVOR="$dfFlavor"
-        return 1
-    fi
-    echo "Changing Flavor to ${1}"
-    reloadFlavor
-}
-reloadFlavor() {
-    if [ "$ZSHFLAVOR" == "mocha" ]; then
-       # MOCHA
-       source "catppuccin/mocha/*.sh"
-       source "catppuccin/mocha/*.zsh"
-    elif [ "$ZSHFLAVOR" == "macchiato" ]; then
-       # MACCHIATO
-       source "catppuccin/macchiato/*.sh"
-       source "catppuccin/macchiato/*.zsh"
-    elif [ "$ZSHFLAVOR" == "frappe" ]; then
-       # FRAPPE
-       source "catppuccin/frappe/*.sh"
-       source "catppuccin/frappe/*.zsh"
-    elif [ "$ZSHFLAVOR" == "latte" ]; then
-       # LATTE
-       source "catppuccin/latte/*.sh"
-       source "catppuccin/latte/*.zsh"
+dfFlavor='Catppuccin-Macchiato'
+reloadTheme() {
+    if [ "$ZSHFLAVOR" == "cpMocha" ] ||
+    [ "$ZSHFLAVOR" == "cpMacchiato" ] ||
+    [ "$ZSHFLAVOR" == "cpFrappe" ] ||
+    [ "$ZSHFLAVOR" == "cpLatte" ] ||
+    [ "$ZSHFLAVOR" == "tkLight" ] ||
+    [ "$ZSHFLAVOR" == "tkNight" ] ||
+    [ "$ZSHFLAVOR" == "tkStorm" ]; then
+       source "themes/$ZSHFLAVOR/*.sh"
+       source "themes/$ZSHFLAVOR/*.zsh"
     else
         echo "Unknown flavor"
         return 1
     fi
+}
+setTheme() {
+    if [[ "${1}" == "Catppuccin-Mocha" ]]; then
+        export ZSHFLAVOR="cpMocha"
+    elif [[ "${1}" == "Catppuccin-Macchiato" ]]; then
+        export ZSHFLAVOR="cpMacchiato"
+    elif [[ "${1}" == "Catppuccin-Frappe" ]]; then
+        export ZSHFLAVOR="cpFrappe"
+    elif [[ "${1}" == "Catppuccin-Latte" ]]; then
+        export FZSHLAVOR="cpLatte"
+    elif [[ "${1}" == "Tokyonight-Light" ]]; then
+        export FZSHLAVOR="tkLight"
+    elif [[ "${1}" == "Tokyonight-Night" ]]; then
+        export FZSHLAVOR="tkNight"
+    elif [[ "${1}" == "Tokyonight-Storm" ]]; then
+        export FZSHLAVOR="tkStorm"
+    else
+        echo "Flavor not found, changing to default (${dfFlavor})"
+        setTheme "${dfFlavor}"
+    fi
+    echo "Changing Flavor to ${1}"
+    reloadTheme
 }

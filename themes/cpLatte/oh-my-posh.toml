@@ -5,12 +5,12 @@ final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
 [palette]
-  mauve = "#ca9ee6"
-  blue = "#8caaee"
-  green = "#a6d189"
-  yellow = "#e5c890"
-  red = "#e78284"
-  subtext = "#838ba7"
+  mauve = "#8839ef"
+  blue = "#1e66f5"
+  green = "#40a02b"
+  yellow = "#df8e1d"
+  red = "#d20f39"
+  subtext = "#8c8fa1"
 
 [[blocks]]
   type = 'prompt'
@@ -32,7 +32,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     foreground = 'p:subtext'
     background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    template = ' {{ .HEAD }}'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -51,7 +51,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     template = '{{ .FormattedMs }}'
 
     [blocks.segments.properties]
-      threshold = 1000
+      threshold = 3000
 
 [[blocks]]
   type = 'prompt'
