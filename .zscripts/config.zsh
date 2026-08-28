@@ -6,6 +6,7 @@ setTheme Catppuccin-Macchiato
 #         Tokyonight-Day
 #         Tokyonight-Night
 #         Tokyonight-Storm
+#         Dracula
 #  To add any more flavor based config, make sure to follow these steps:
 #     1-  add a '.zsh' or '.sh' file to the catppuccin/FLAVOR that you want, preferebly on all
 
@@ -36,7 +37,7 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" menu no
 zstyle ":fzf-tab:complete:cd:*" fzf-preview "eza $realpath"
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza $realpath'
+zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "eza $realpath"
 
 chpwd() {
    eza

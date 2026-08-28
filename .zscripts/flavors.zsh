@@ -6,7 +6,8 @@ reloadTheme() {
     [ "$ZSHFLAVOR" == "cpLatte" ] ||
     [ "$ZSHFLAVOR" == "tkLight" ] ||
     [ "$ZSHFLAVOR" == "tkNight" ] ||
-    [ "$ZSHFLAVOR" == "tkStorm" ]; then
+    [ "$ZSHFLAVOR" == "tkStorm" ] ||
+    [ "$ZSHFLAVOR" == "dcDracula" ]; then
        source "themes/$ZSHFLAVOR/*.sh"
        source "themes/$ZSHFLAVOR/*.zsh"
     else
@@ -29,6 +30,8 @@ setTheme() {
         export FZSHLAVOR="tkNight"
     elif [[ "${1}" == "Tokyonight-Storm" ]]; then
         export FZSHLAVOR="tkStorm"
+    elif [[ "${1}" == "Dracula" ]]; then
+        export FZSHLAVOR="dcDracula"
     else
         echo "Flavor not found, changing to default (${dfFlavor})"
         setTheme "${dfFlavor}"
