@@ -1,13 +1,12 @@
-# CHANGE SHELL INCASE NEEDED
-if [ "$SHELL" -ne "$(which zsh)" ]; then
-    sudo chsh -s "$(which zsh)"
-fi
-source "plugins.zsh"
-source "flavors.zsh"
-source "config.zsh"
-source "bindings.zsh"
-source "alias.zsh"
-source "dependencies.zsh"
+source ".zscripts/plugins.zsh"
+source ".zscripts/themes.zsh"
+source ".zscripts/config.zsh"
+source ".zscripts/bindings.zsh"
+source ".zscripts/alias.zsh"
+source ".zscripts/dependencies.zsh"
+source ".zscripts/header.zsh"
+source ".zscripts/path.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # DO NOT REMOVE ANY OF THE ABOVE
 
 zPluginUpdate
@@ -18,4 +17,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 clear
 
-reloadFlavor # KEEP THIS AT THE VERY BOTTOM
+$HEADER_COMMAND

@@ -1,0 +1,1 @@
+export HEADER_COMMAND="neofetch"

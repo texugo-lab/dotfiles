@@ -63,14 +63,14 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     foreground = 'p:mauve'
     background = 'transparent'
-    template = '󰮺'
+    template = '$'
 
 [transient_prompt]
   foreground = 'p:mauve'
   background = 'transparent'
-  template = '󰮺 '
+  template = '$ '
 
 [secondary_prompt]
   foreground = 'p:mauve'
   background = 'transparent'
-  template = '󰮺 '
+  template = '$ '

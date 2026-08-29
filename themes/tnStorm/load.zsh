@@ -1,2 +1,6 @@
-eval "$(oh-my-posh init zsh --config oh-my-posh.toml)"
-cp lazygit.yml $HOME/.config/lazygit/config.yml
+THEME_LOCATION="themes/tnStorm/"
+eval "$(oh-my-posh init zsh --config ${THEME_LOCATION}oh-my-posh.toml)"
+cp "${THEME_LOCATION}/config.conf" "$HOME/.config/neofetch/"
+cp "${THEME_LOCATION}/header.txt" "$HOME/.config/neofetch/"
+source "${THEME_LOCATION}fzf.zsh"
+source "${THEME_LOCATION}zsh-sh.zsh"
