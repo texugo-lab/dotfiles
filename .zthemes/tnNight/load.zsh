@@ -1,4 +1,5 @@
 THEME_LOCATION=".zthemes/tnNight/"
+export LS_COLORS="$(vivid generate tokyonight-night)"
 eval "$(oh-my-posh init zsh --config ${THEME_LOCATION}oh-my-posh.toml)"
 cp "${THEME_LOCATION}/config.conf" "$HOME/.config/neofetch/"
 cp "${THEME_LOCATION}/../header.txt" "$HOME/.config/neofetch/"
