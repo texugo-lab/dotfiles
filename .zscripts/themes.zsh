@@ -35,6 +35,6 @@ reloadTheme() {
          [[ "$ZSHFLAVOR" == "dcDracula"   ]] ||
          [[ "$ZSHFLAVOR" == "tnLight"     ]] ||
          [[ "$ZSHFLAVOR" == "tnNight"     ]] ||
-         [[ "$ZSHFLAVOR" == "tnStorm"     ]]; then source "themes/$ZSHFLAVOR/load.zsh"
+         [[ "$ZSHFLAVOR" == "tnStorm"     ]]; then source ".zthemes/$ZSHFLAVOR/load.zsh"
     fi
 }

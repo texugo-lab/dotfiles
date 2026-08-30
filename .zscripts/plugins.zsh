@@ -24,3 +24,4 @@ zPluginLoad zsh-users       zsh-completions; autoload -U compinit && compinit
 zPluginLoad zsh-users       zsh-history-substring-search
 zPluginLoad Aloxaf          fzf-tab
 zPluginLoad zsh-users       zsh-syntax-highlighting
+zPluginLoad jeffreytse      zsh-vi-mode
