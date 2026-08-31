@@ -4,15 +4,15 @@ These are my dotfiles.
 
 ## Dependencies
 
-fzf - Fuzzy finder
+[fzf](https://github.com/junegunn/fzf) - Fuzzy finder
 
-zoxide - The better cd
+[zoxide](https://github.com/ajeetdsouza/zoxide) - The better cd
 
-neofetch - Command-line system information tool
+[neofetch](https://github.com/dylanaraps/neofetch) - Command-line system information tool
 
-oh-my-posh - The most customizable shell prompt renderer
+[oh-my-posh](https://github.com/jandedobbeleer/oh-my-posh) - The most customizable shell prompt renderer
 
-vivid - A themeable LS_COLORS generator
+[vivid](https://github.com/sharkdp/vivid) - A themeable LS_COLORS generator
 
 # Disclaimer
 
