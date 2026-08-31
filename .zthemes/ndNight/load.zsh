@@ -1,0 +1,8 @@
+THEME_LOCATION="$HOME/.zthemes/ndNight/"
+export LS_COLORS="$(vivid generate nord)"
+export BAT_THEME="Nord"
+eval "$(oh-my-posh init zsh --config ${THEME_LOCATION}oh-my-posh.toml)"
+cp "${THEME_LOCATION}/config.conf" "$HOME/.config/neofetch/"
+cp "${THEME_LOCATION}/../header.txt" "$HOME/.config/neofetch/"
+source "${THEME_LOCATION}fzf.zsh"
+source "${THEME_LOCATION}zsh-sh.zsh"

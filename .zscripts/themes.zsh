@@ -8,6 +8,7 @@ setTheme() {
     elif [[ "${1}" == "Tokyonight-Night"     ]]; then export ZSHFLAVOR="tkNight"
     elif [[ "${1}" == "Tokyonight-Storm"     ]]; then export ZSHFLAVOR="tkStorm"
     elif [[ "${1}" == "Dracula"              ]]; then export ZSHFLAVOR="dcDracula"
+    elif [[ "${1}" == "Nord"                 ]]; then export ZSHFLAVOR="ndNight"
     elif [[ "${1}" == "--list"               ]]; then
         echo "   Catppuccin-Mocha"
         echo "   Catppuccin-Macchiato -> DEFAULT"
@@ -17,6 +18,7 @@ setTheme() {
         echo "   Tokyonight-Night"
         echo "   Tokyonight-Storm"
         echo "   Dracula"
+	echo "   Nord"
         return 0
     else
         echo "Theme not found; Changing Theme to default ($dfTheme)"
@@ -35,6 +37,7 @@ reloadTheme() {
          [[ "$ZSHFLAVOR" == "dcDracula"   ]] ||
          [[ "$ZSHFLAVOR" == "tnLight"     ]] ||
          [[ "$ZSHFLAVOR" == "tnNight"     ]] ||
-         [[ "$ZSHFLAVOR" == "tnStorm"     ]]; then source ".zthemes/$ZSHFLAVOR/load.zsh"
+         [[ "$ZSHFLAVOR" == "tnStorm"     ]] ||
+         [[ "$ZSHFLAVOR" == "ndNight"     ]]; then source ".zthemes/$ZSHFLAVOR/load.zsh"
     fi
 }

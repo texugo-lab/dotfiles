@@ -1,0 +1,76 @@
+# :schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 4
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[palette]
+  mauve = "#b48ead"
+  blue = "#5e81ac"
+  green = "#a3be8c"
+  yellow = "#ebcb8b"
+  red = "#bf616a"
+  subtext = "#4c566a"
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:blue'
+    template = '{{ .Path }}'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:subtext'
+    background = 'transparent'
+    template = ' {{ .HEAD }}'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'p:yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 3000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = 'p:mauve'
+    background = 'transparent'
+    template = '$'
+
+[transient_prompt]
+  foreground = 'p:mauve'
+  background = 'transparent'
+  template = '$ '
+
+[secondary_prompt]
+  foreground = 'p:mauve'
+  background = 'transparent'
+  template = '$ '
