@@ -1,4 +1,4 @@
-THEME_LOCATION=".zthemes/cpLatte/"
+THEME_LOCATION="$HOME/.zthemes/cpLatte/"
 export LS_COLORS="$(vivid generate catppuccin-latte)"
 export BAT_THEME="Catppuccin Latte"
 eval "$(oh-my-posh init zsh --config ${THEME_LOCATION}oh-my-posh.toml)"

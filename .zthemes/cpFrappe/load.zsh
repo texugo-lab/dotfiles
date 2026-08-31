@@ -1,4 +1,4 @@
-THEME_LOCATION=".zthemes/cpFrappe/"
+THEME_LOCATION="$HOME/.zthemes/cpFrappe/"
 export LS_COLORS="$(vivid generate catppuccin-frappe)"
 export BAT_THEME="Catppuccin Frappe"
 eval "$(oh-my-posh init zsh --config ${THEME_LOCATION}oh-my-posh.toml)"

@@ -1,5 +1,6 @@
-alias ls="ls --color"
+alias ls="ls --color --group-directories-first"
 alias la="ls -a"
+alias lh="la -lh"
 autoload zmv
 alias mv='zmv'
 alias src='source $HOME/.zshrc'

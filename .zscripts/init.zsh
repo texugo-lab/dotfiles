@@ -1,11 +1,11 @@
-source ".zscripts/plugins.zsh"
-source ".zscripts/themes.zsh"
-source ".zscripts/config.zsh"
-source ".zscripts/bindings.zsh"
-source ".zscripts/alias.zsh"
-source ".zscripts/dependencies.zsh"
-source ".zscripts/header.zsh"
-source ".zscripts/path.zsh"
+source "$HOME/.zscripts/plugins.zsh"
+source "$HOME/.zscripts/themes.zsh"
+source "$HOME/.zscripts/config.zsh"
+source "$HOME/.zscripts/bindings.zsh"
+source "$HOME/.zscripts/alias.zsh"
+source "$HOME/.zscripts/dependencies.zsh"
+source "$HOME/.zscripts/header.zsh"
+source "$HOME/.zscripts/path.zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # DO NOT REMOVE ANY OF THE ABOVE
 

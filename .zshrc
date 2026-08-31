@@ -1,1 +1,1 @@
-source ".zscripts/init.zsh"
+source "$HOME/.zscripts/init.zsh"
