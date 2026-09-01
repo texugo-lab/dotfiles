@@ -18,7 +18,7 @@ setTheme() {
         echo "   Tokyonight-Night"
         echo "   Tokyonight-Storm"
         echo "   Dracula"
-	echo "   Nord"
+	    echo "   Nord"
         return 0
     else
         echo "Theme not found; Changing Theme to default ($dfTheme)"
@@ -30,14 +30,5 @@ setTheme() {
     reloadTheme
 }
 reloadTheme() {
-    if   [[ "$ZSHFLAVOR" == "cpMocha"     ]] ||
-         [[ "$ZSHFLAVOR" == "cpMacchiato" ]] ||
-         [[ "$ZSHFLAVOR" == "cpFrappe"    ]] ||
-         [[ "$ZSHFLAVOR" == "cpLatte"     ]] ||
-         [[ "$ZSHFLAVOR" == "dcDracula"   ]] ||
-         [[ "$ZSHFLAVOR" == "tnLight"     ]] ||
-         [[ "$ZSHFLAVOR" == "tnNight"     ]] ||
-         [[ "$ZSHFLAVOR" == "tnStorm"     ]] ||
-         [[ "$ZSHFLAVOR" == "ndNight"     ]]; then source ".zthemes/$ZSHFLAVOR/load.zsh"
-    fi
+    zAddFile "$HOME/.zthemes/$ZSHFLAVOR/load.zsh"
 }

@@ -1,20 +1,21 @@
-source "$HOME/.zscripts/plugins.zsh"
-source "$HOME/.zscripts/themes.zsh"
-source "$HOME/.zscripts/config.zsh"
-source "$HOME/.zscripts/bindings.zsh"
-source "$HOME/.zscripts/alias.zsh"
-source "$HOME/.zscripts/dependencies.zsh"
-source "$HOME/.zscripts/header.zsh"
-source "$HOME/.zscripts/path.zsh"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source "$HOME/.zscripts/file.zsh"
+
+zAddFile ~/.fzf.zsh
+eval "$(fzf --zsh)"
+
+zAddFile "$HOME/.zscripts/plugins.zsh"
+zPluginUpdate
+zAddFile "$HOME/.zscripts/themes.zsh"
+zAddFile "$HOME/.zscripts/config.zsh"
+zAddFile "$HOME/.zscripts/bindings.zsh"
+zAddFile "$HOME/.zscripts/alias.zsh"
+zAddFile "$HOME/.zscripts/dependencies.zsh"
+zAddFile "$HOME/.zscripts/header.zsh"
+zAddFile "$HOME/.zscripts/path.zsh"
 # DO NOT REMOVE ANY OF THE ABOVE
 
-zPluginUpdate
-
 #  EVALS
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 
 clear
-
 $HEADER_COMMAND

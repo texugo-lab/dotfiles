@@ -1,9 +1,8 @@
 alias ls="ls --color --group-directories-first"
-alias la="ls -a"
+alias la="ls -A"
 alias lh="la -lh"
+alias lv="la -1"
 autoload zmv
-alias mv='zmv'
 alias src='source $HOME/.zshrc'
 alias bat="bat -p -n --paging=never --color=always"
-alias -g fuzzy='$(fzf --preview="bat -p --color=always {}")'
-alias -s md='glow'
+alias fzfp='fzf --preview="bat -p --color=always {}"'
