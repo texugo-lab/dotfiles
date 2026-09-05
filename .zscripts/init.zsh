@@ -1,10 +1,10 @@
 source "$HOME/.zscripts/file.zsh"
 
-zAddFile ~/.fzf.zsh
-eval "$(fzf --zsh)"
+zAddFile "$HOME/.fzf.zsh"
+eval $(fzf --zsh)
 
 zAddFile "$HOME/.zscripts/plugins.zsh"
-zPluginUpdate
+zPlugin loadAll
 zAddFile "$HOME/.zscripts/themes.zsh"
 zAddFile "$HOME/.zscripts/config.zsh"
 zAddFile "$HOME/.zscripts/bindings.zsh"
@@ -17,5 +17,4 @@ zAddFile "$HOME/.zscripts/path.zsh"
 #  EVALS
 eval "$(zoxide init zsh)"
 
-clear
 $HEADER_COMMAND

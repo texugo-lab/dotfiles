@@ -1,4 +1,4 @@
-setTheme Catppuccin-Macchiato
+theme set Catppuccin-Macchiato -q
 #         Catppuccin-Mocha
 #         Catppuccin-Macchiato -> DEFAULT
 #         Catppuccin-Frappe
@@ -36,5 +36,5 @@ zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls $realpath"
 zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls $realpath"
 
 chpwd() {
-   ls --group-directories-first --color -A
+   ls --group-directories-first --color -A -1
 }
