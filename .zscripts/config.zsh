@@ -15,6 +15,9 @@ theme set Catppuccin-Macchiato -q
 export EDITOR='nvim' # EDITOR
 export VISUAL='nvim' # VISUAL
 
+# TMUXIFIER
+export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
+
 #  HISTORY
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -32,8 +35,11 @@ setopt hist_find_no_dups
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" menu no
-zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls $realpath"
-zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls $realpath"
+zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls --color -1 -A $realpath"
+zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls --color -1 -A $realpath"
+zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 chpwd() {
    ls --group-directories-first --color -A -1

@@ -1,7 +1,6 @@
 source "$HOME/.zscripts/file.zsh"
 
 zAddFile "$HOME/.fzf.zsh"
-eval $(fzf --zsh)
 
 zAddFile "$HOME/.zscripts/plugins.zsh"
 zPlugin loadAll
@@ -16,5 +15,6 @@ zAddFile "$HOME/.zscripts/path.zsh"
 
 #  EVALS
 eval "$(zoxide init zsh)"
+eval "$(tmuxifier init -)"
 
 $HEADER_COMMAND

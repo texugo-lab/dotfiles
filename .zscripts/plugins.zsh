@@ -24,7 +24,7 @@ zPlugin() {
         if [ ! -d "$plugin_path" ]; then
             mkdir -p "$ZPLUGINDIR"
             echo "Installing ${repo}"
-            git clone --depth=1 "${2}" "$plugin_path" -q
+            git clone "${2}" "$plugin_path" -q
         fi
         zAddFile "$plugin_path/${repo}"
         zAddFile "$plugin_path/${repo}.plugin.zsh"
@@ -45,10 +45,10 @@ zPlugin() {
         local dir
         for dir in "${ZPLUGINDIR}"/*/; do
             if [[ "${2}" == "-q" ]]; then
-                git -C "$dir" pull --depth=1 --ff-only -q
+                git -C "$dir" pull --ff-only -q
             else
                 echo "updating ${dir:t}"
-                git -C "$dir" pull --depth=1 --ff-only
+                git -C "$dir" pull --ff-only
             fi
             zAddFile "${ZPLUGINDIR}/${dir:t}/${dir:t}"
             zAddFile "${ZPLUGINDIR}/${dir:t}/${dir:t}.zsh"
@@ -65,9 +65,10 @@ zPlugin() {
 #  GUIDE:
 #     zPlugin load <REPOSITORY>
 zPlugin load https://github.com/zsh-users/zsh-autosuggestions
-zPlugin load https://github.com/zsh-users/zsh-completions; autoload -U compinit && compinit
+zPlugin load https://github.com/zsh-users/zsh-completions; autoload -U compinit; compinit
 zPlugin load https://github.com/zsh-users/zsh-history-substring-search
 zPlugin load https://github.com/Aloxaf/fzf-tab
 zPlugin load https://github.com/zsh-users/zsh-syntax-highlighting
 zPlugin load https://github.com/jeffreytse/zsh-vi-mode
 zPlugin load https://github.com/akash329d/zsh-alias-finder
+zPlugin load https://github.com/davidde/git
