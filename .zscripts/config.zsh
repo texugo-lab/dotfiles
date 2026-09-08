@@ -18,6 +18,8 @@ export VISUAL='nvim' # VISUAL
 # TMUXIFIER
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
+export FZF_DEFAULT_OPTS="--preview="bat -p --color=always {}" --reverse --preview-border="sharp" --preview-window=right:75% --border"
+
 #  HISTORY
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
