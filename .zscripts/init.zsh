@@ -4,6 +4,7 @@ zAddFile "$HOME/.fzf.zsh"
 
 zAddFile "$HOME/.zscripts/plugins.zsh"
 zPlugin loadAll
+zAddFile "$HOME/.zscripts/functions.zsh"
 zAddFile "$HOME/.zscripts/themes.zsh"
 zAddFile "$HOME/.zscripts/config.zsh"
 zAddFile "$HOME/.zscripts/bindings.zsh"

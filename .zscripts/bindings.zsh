@@ -2,3 +2,6 @@
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
+
+zle -N tmux-menu
+bindkey '^n' tmux-menu

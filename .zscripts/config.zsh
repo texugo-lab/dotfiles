@@ -18,6 +18,8 @@ export VISUAL='nvim' # VISUAL
 # TMUXIFIER
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --style=full:line --border=rounded --layout=reverse --info=hidden --pointer=> --marker=x --input-border=line --list-border=none --header-border=inline --preview-border=inline --preview-window=down"
+
 #  HISTORY
 HISTSIZE=5000
 HISTFILE=~/.zsh_history

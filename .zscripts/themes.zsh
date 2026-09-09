@@ -21,15 +21,15 @@ theme() {
         echo "  Dracula"
 	    echo "  Nord"
     elif [[ "${1}" == "set" ]]; then
-        if   [[ "${2}" == "Catppuccin-Mocha"     ]]; then export ZSHFLAVOR="cpMocha"
-        elif [[ "${2}" == "Catppuccin-Macchiato" ]]; then export ZSHFLAVOR="cpMacchiato"
-        elif [[ "${2}" == "Catppuccin-Frappe"    ]]; then export ZSHFLAVOR="cpFrappe"
-        elif [[ "${2}" == "Catppuccin-Latte"     ]]; then export ZSHFLAVOR="cpLatte"
-        elif [[ "${2}" == "Tokyonight-Light"     ]]; then export ZSHFLAVOR="tkLight"
-        elif [[ "${2}" == "Tokyonight-Night"     ]]; then export ZSHFLAVOR="tkNight"
-        elif [[ "${2}" == "Tokyonight-Storm"     ]]; then export ZSHFLAVOR="tkStorm"
-        elif [[ "${2}" == "Dracula"              ]]; then export ZSHFLAVOR="dcDracula"
-        elif [[ "${2}" == "Nord"                 ]]; then export ZSHFLAVOR="ndNight"
+        if   [[ "${2}" == "Catppuccin-Mocha"     ]]; then export ZTHEME="cpMocha"
+        elif [[ "${2}" == "Catppuccin-Macchiato" ]]; then export ZTHEME="cpMacchiato"
+        elif [[ "${2}" == "Catppuccin-Frappe"    ]]; then export ZTHEME="cpFrappe"
+        elif [[ "${2}" == "Catppuccin-Latte"     ]]; then export ZTHEME="cpLatte"
+        elif [[ "${2}" == "Tokyonight-Light"     ]]; then export ZTHEME="tkLight"
+        elif [[ "${2}" == "Tokyonight-Night"     ]]; then export ZTHEME="tkNight"
+        elif [[ "${2}" == "Tokyonight-Storm"     ]]; then export ZTHEME="tkStorm"
+        elif [[ "${2}" == "Dracula"              ]]; then export ZTHEME="dcDracula"
+        elif [[ "${2}" == "Nord"                 ]]; then export ZTHEME="ndNight"
         else
             echo "Theme not found; Changing Theme to default ($dfTheme)"
             theme set "$dfTheme" -q
@@ -41,7 +41,7 @@ theme() {
         fi
         theme reload
     elif [[ "${1}" == "reload" ]]; then
-        zAddFile "$HOME/.zthemes/$ZSHFLAVOR/load.zsh"
+        zAddFile "$HOME/.zthemes/$ZTHEME/load.zsh"
     else
         echo "Use 'theme --help' or 'theme -h' to see the full help page"
     fi
