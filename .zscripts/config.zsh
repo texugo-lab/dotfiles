@@ -18,7 +18,7 @@ export VISUAL='nvim' # VISUAL
 # TMUXIFIER
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --style=full:line --border=rounded --layout=reverse --info=hidden --pointer=> --marker=x --input-border=line --list-border=none --header-border=inline --preview-border=inline --preview-window=down"
+export FZF_DEFAULT_OPTS="--preview="bat -p --color=always {}" --style=full:line --border=bold --info=hidden --pointer=> --marker=× --input-border=line --preview-border=inline --border-label-pos=18 --input-label-pos=15 --list-label-pos=16 --header-label-pos=22 --preview-window=up"
 
 #  HISTORY
 HISTSIZE=5000

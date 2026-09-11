@@ -7,3 +7,4 @@ alias src='source $HOME/.zshrc'
 alias batp="bat -p -n --paging=never --color=always"
 alias tm="tmuxifier"
 alias hstReset="rm -rf $HISTFILE && touch $HISTFILE"
+alias nvimp="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
