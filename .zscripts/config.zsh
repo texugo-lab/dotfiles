@@ -9,7 +9,7 @@ theme set Catppuccin-Macchiato -q
 #         Dracula
 #         Nord
 #  To add any more flavor based config, make sure to follow these steps:
-#     1-  add a '.zsh' or '.sh' file to the catppuccin/FLAVOR that you want, preferebly on all
+#     1-  add a '.zsh' file to the catppuccin/FLAVOR that you want, preferebly on all
 #     2-  add that file to load.zsh
 
 export EDITOR='nvim' # EDITOR
@@ -18,7 +18,7 @@ export VISUAL='nvim' # VISUAL
 # TMUXIFIER
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
-export FZF_DEFAULT_OPTS="--preview="bat -p --color=always {}" --style=full:line --border=bold --info=hidden --pointer=> --marker=× --input-border=line --preview-border=inline --border-label-pos=18 --input-label-pos=15 --list-label-pos=16 --header-label-pos=22 --preview-window=up"
+export FZF_DEFAULT_OPTS="--style=full:line --border=bold --info=hidden --pointer=> --marker=× --input-border=line --preview-border=inline --border-label-pos=18 --input-label-pos=15 --list-label-pos=16 --header-label-pos=22 --preview-window=up"
 
 #  HISTORY
 HISTSIZE=5000

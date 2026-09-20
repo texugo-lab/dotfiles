@@ -1,2 +1,4 @@
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.tmuxifier/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/snap/bin"
