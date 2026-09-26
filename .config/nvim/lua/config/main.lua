@@ -3,6 +3,7 @@ vim.cmd('colorscheme catppuccin-macchiato')
 vim.o.relativenumber = true
 vim.o.number = true
 
+vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldinner: ,foldclose:'
 vim.o.foldlevel = 99
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
@@ -19,3 +20,7 @@ vim.opt.complete:append('o')
 vim.opt.completeopt = { 'menuone', 'noselect' }
 vim.o.pumheight = 10
 vim.o.pumborder = 'rounded'
+
+vim.opt.whichwrap:append("<>[]hl")
+
+vim.o.clipboard = "unnamedplus"
