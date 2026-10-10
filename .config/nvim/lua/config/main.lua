@@ -24,3 +24,10 @@ vim.o.pumborder = 'rounded'
 vim.opt.whichwrap:append("<>[]hl")
 
 vim.o.clipboard = "unnamedplus"
+
+vim.cmd [[
+	hi Normal guibg=none
+	hi NonText guibg=none
+	hi Normal ctermbg=none
+	hi NonText ctermbg=none
+]]
