@@ -1,11 +1,10 @@
+vim.pack.add { "https://github.com/lewis6991/gitsigns.nvim" }
+
 local M = {}
 
-vim.pack.add({
-	"https://github.com/lewis6991/gitsigns.nvim"
-})
-
 M.options = {
-	statusLine = {
+	statusline = {
+		enabled = true,
 		a = "%{v:lua.mode()}",
 		b = "%{v:lua.git()}",
 		c = "%t%m%r%h%w",
@@ -13,10 +12,20 @@ M.options = {
 		y = "%l:%c",
 		z = "%{&filetype}",
 	},
+	tabline = {
+		enabled = true,
+		a = "",
+		b = "",
+		c = "",
+		x = "",
+		y = "",
+		z = "",
+	},
 
-	statusline = true,
-	tabline = true,
-	lineColumn = true,
+	linecolumn = {
+		enabled = true,
+		bold = true,
+	},
 
 	separator = {
 		right = "",
@@ -34,6 +43,8 @@ M.options = {
 		v = "#c6a0f6",
 		V = "#c6a0f6",
 		[''] = "#c6a0f6",
+		bg = "#24273a",
+		dim = "#6e738d",
 	}
 }
 
@@ -87,19 +98,26 @@ function M.setup(opts)
 		return modes[vim.fn.mode()]
 	end
 
-	function _G.color(name, bg, bold, color)
+	function _G.color(name, bg, bold, color, transparent)
+		if (transparent == 1) then
+			vim.api.nvim_set_hl(0, name, {
+				bg = M.options.colors.bg,
+				fg = M.options.colors.bg,
+			})
+			return "%#" .. name .. "#"
+		end
 		if (color == 0) then
 			if (bg == 1) then
 				vim.api.nvim_set_hl(0, name, {
-					bg = "#6e738d",
-					fg = "#24273a",
+					bg = M.options.colors.dim,
+					fg = M.options.colors.bg,
 					bold = bold,
 				})
 				return "%#" .. name .. "#"
 			end
 			vim.api.nvim_set_hl(0, name, {
-				fg = "#6e738d",
-				bg = "#24273a",
+				fg = M.options.colors.dim,
+				bg = M.options.colors.bg,
 				bold = bold,
 			})
 			return "%#" .. name .. "#"
@@ -107,61 +125,91 @@ function M.setup(opts)
 		if (bg == 1) then
 			vim.api.nvim_set_hl(0, name, {
 				bg = M.options.colors[vim.fn.mode()],
-				fg = "#24273a",
+				fg = M.options.colors.bg,
 				bold = bold,
 			})
 			return "%#" .. name .. "#"
 		end
 		vim.api.nvim_set_hl(0, name, {
 			fg = M.options.colors[vim.fn.mode()],
-			bg = "#24273a",
+			bg = M.options.colors.bg,
 			bold = bold,
 		})
 		return "%#" .. name .. "#"
 	end
 
-	if M.options.statusline == true then
+	if M.options.statusline.enabled == true then
 		local s = ""
-		if not (M.options.statusLine.a == "") then
+		if not (M.options.statusline.a == "") then
 			s = s ..
 				"%{%v:lua.color('StatusLineA', 1, 1)%} " ..
-				M.options.statusLine.a .. "%{%v:lua.color('StatusLineB')%}" .. M.options.separator.left
+				M.options.statusline.a .. "%{%v:lua.color('StatusLineB')%}" .. M.options.separator.left
 		end
-		if not (M.options.statusLine.b == "") then
+		if not (M.options.statusline.b == "") then
 			s = s ..
 				"%{%v:lua.color('StatusLineB')%} " ..
-				M.options.statusLine.b .. M.options.separator.leftDim
+				M.options.statusline.b .. M.options.separator.leftDim
 		end
-		if not (M.options.statusLine.c == "") then
+		if not (M.options.statusline.c == "") then
 			s = s ..
 				"%{%v:lua.color('StatusLineC', 0, 0, 0)%} " ..
-				M.options.statusLine.c
+				M.options.statusline.c
 		end
 
 		s = s .. "%="
 
-		if not (M.options.statusLine.x == "") then
+		if not (M.options.statusline.x == "") then
 			s = s ..
 				"%{%v:lua.color('StatusLineC', 0, 0, 0)%}" ..
-				M.options.statusLine.x .. " "
+				M.options.statusline.x .. " "
 		end
-		if not (M.options.statusLine.y == "") then
+		if not (M.options.statusline.y == "") then
 			s = s ..
 				"%{%v:lua.color('StatusLineB')%}" .. M.options.separator.rightDim .. " " ..
-				M.options.statusLine.y .. " "
+				M.options.statusline.y .. " "
 		end
-		if not (M.options.statusLine.z == "") then
+		if not (M.options.statusline.z == "") then
 			s = s .. "%{%v:lua.color('StatusLineB')%}" .. M.options.separator.right ..
-				"%{%v:lua.color('StatusLineA', 1, 1)%}" .. M.options.statusLine.z .. " "
+				"%{%v:lua.color('StatusLineA', 1, 1)%}" .. M.options.statusline.z .. " "
 		end
 
 		vim.o.statusline = s
 	end
-	if M.options.tabline == true then
+	if M.options.tabline.enabled == true then
 		function _G.rendertabline()
-			local t = "%{%v:lua.color('TabLineS')%}%="
+			local s = "%{%v:lua.color('TabLineS')%}"
 			local tabs = vim.api.nvim_list_tabpages()
 			local current = vim.api.nvim_get_current_tabpage()
+
+			if not (M.options.tabline.a == "") then
+				s = s ..
+					"%{%v:lua.color('StatusLineA', 1, 1)%} " ..
+					M.options.tabline.a .. "%{%v:lua.color('StatusLineB')%}" .. M.options.separator.left
+			end
+			if not (M.options.tabline.b == "") then
+				s = s ..
+					"%{%v:lua.color('StatusLineB')%} " ..
+					M.options.tabline.b .. M.options.separator.leftDim
+			end
+			if not (M.options.tabline.c == "") then
+				s = s ..
+					"%{%v:lua.color('StatusLineC', 0, 0, 0)%} " ..
+					M.options.tabline.c
+			end
+
+			if not (M.options.tabline.x == "") then
+				s = s .. "%{%v:lua.color('StatusLineT', 0, 0, 0, 1)%}" ..
+					M.options.tabline.x .. " "
+			end
+			if not (M.options.tabline.y == "") then
+				s = s .. M.options.separator.rightDim .. " " ..
+					M.options.tabline.y .. " "
+			end
+			if not (M.options.tabline.z == "") then
+				s = s .. M.options.separator.right .. M.options.tabline.z .. " "
+			end
+
+			s = s .. "%="
 
 			for i, tab in ipairs(tabs) do
 				local active = tab == current
@@ -169,24 +217,51 @@ function M.setup(opts)
 				local hlE = active and "%{%v:lua.color('TabLineS')%}" or "%{%v:lua.color('TabLineI', 0, 0, 0)%}"
 				local hlM = active and "%{%v:lua.color('TabLineSM', 1, 1)%}" or "%{%v:lua.color('TabLineIM', 1, 1, 0)%}"
 
-				t = t .. hlE .. M.options.separator.right
-				t = t .. hlM .. i
-				t = t .. hlE .. M.options.separator.left
+				s = s .. hlE .. M.options.separator.right
+				s = s .. hlM .. i
+				s = s .. hlE .. M.options.separator.left
 				if (tabs[i + 1]) then
-					t = t .. " "
+					s = s .. " "
 				end
 			end
-			t = t .. "%="
-			return t
+			s = s .. "%="
+
+			if not (M.options.tabline.a == "") then
+				s = s ..
+					"%{%v:lua.color('StatusLineT', 0, 0, 0, 1)%} " .. M.options.tabline.a .. M.options.separator.left
+			end
+			if not (M.options.tabline.b == "") then
+				s = s ..
+					M.options.tabline.b .. M.options.separator.leftDim
+			end
+			if not (M.options.tabline.c == "") then
+				s = s ..
+					M.options.tabline.c
+			end
+
+			if not (M.options.tabline.x == "") then
+				s = s .. "%{%v:lua.color('StatusLineC', 0, 0, 0)%}" .. M.options.tabline.x .. " "
+			end
+			if not (M.options.tabline.y == "") then
+				s = s ..
+					"%{%v:lua.color('StatusLineB')%}" .. M.options.separator.rightDim .. " " ..
+					M.options.tabline.y .. " "
+			end
+			if not (M.options.tabline.z == "") then
+				s = s .. "%{%v:lua.color('StatusLineB')%}" .. M.options.separator.right ..
+					"%{%v:lua.color('StatusLineA', 1, 1)%}" .. M.options.tabline.z .. " "
+			end
+
+			return s
 		end
 
 		vim.o.tabline = "%!v:lua.rendertabline()"
 	end
-	if M.options.lineColumn == true then
-		color('CursorLineNr', 0, 1)
+	if M.options.linecolumn.enabled == true then
+		color('CursorLineNr', 0, M.options.linecolumn.bold)
 		vim.api.nvim_create_autocmd('ModeChanged', {
 			callback = function()
-				color('CursorLineNr', 0, 1)
+				color('CursorLineNr', 0, M.options.linecolumn.bold)
 				if (vim.fn.mode() == 'c') then
 					vim.cmd.redraw()
 				end
