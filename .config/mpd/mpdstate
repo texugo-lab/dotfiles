@@ -6,7 +6,7 @@ audio_device_state:1:my_fifo
 audio_device_state:1:HTTP Stream
 state: pause
 current: 0
-time: 38.293
+time: 7.558
 random: 0
 repeat: 0
 single: 0
@@ -17,49 +17,13 @@ mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
 0:Hamilton/Alexander Hamilton.mp3
-1:Hamilton/Aaron Burr, Sir.mp3
-2:Hamilton/My Shot.mp3
-3:Hamilton/The Story of Tonight.mp3
-4:Hamilton/The Schuyler Sisters.mp3
-5:Hamilton/Farmer Refuted.mp3
-6:Hamilton/You'll Be Back.mp3
-7:Hamilton/Right Hand Man.mp3
-8:Hamilton/A Winter's Ball.mp3
-9:Hamilton/Helpless.mp3
-10:Hamilton/Satisfied.mp3
-11:Hamilton/The Story of Tonight (Reprise).mp3
-12:Hamilton/Wait for It.mp3
-13:Hamilton/Stay Alive.mp3
-14:Hamilton/Ten Duel Commandments.mp3
-15:Hamilton/Meet Me Inside.mp3
-16:Hamilton/That Would Be Enough.mp3
-17:Hamilton/Guns and Ships.mp3
-18:Hamilton/History Has Its Eyes on You.mp3
-19:Hamilton/Yorktown (The World Turned Upside Down).mp3
-20:Hamilton/What Comes Next_.mp3
-21:Hamilton/Dear Theodosia.mp3
-22:Hamilton/Non-Stop.mp3
-23:Hamilton/What'd I Miss.mp3
-24:Hamilton/Cabinet Battle #1.mp3
-25:Hamilton/Take a Break.mp3
-26:Hamilton/Say No To This.mp3
-27:Hamilton/The Room Where It Happens.mp3
-28:Hamilton/Schuyler Defeated.mp3
-29:Hamilton/Cabinet Battle #2.mp3
-30:Hamilton/Washington on Your Side.mp3
-31:Hamilton/One Last Time.mp3
-32:Hamilton/I Know Him.mp3
-33:Hamilton/The Adams Administration.mp3
-34:Hamilton/We Know.mp3
-35:Hamilton/Hurricane.mp3
-36:Hamilton/The Reynolds Pamphlet.mp3
-37:Hamilton/Burn.mp3
-38:Hamilton/Blow Us All Away.mp3
-39:Hamilton/Stay Alive (Reprise).mp3
-40:Hamilton/It's Quiet Uptown.mp3
-41:Hamilton/The Election of 1800.mp3
-42:Hamilton/Your Obedient Servant.mp3
-43:Hamilton/Best of Wives and Best of Women.mp3
-44:Hamilton/The World Was Wide Enough.mp3
-45:Hamilton/Who Lives, Who Dies, Who Tells Your Story.mp3
+1:Hamilton/My Shot.mp3
+2:Hamilton/Farmer Refuted.mp3
+3:Hamilton/Right Hand Man.mp3
+4:Hamilton/Satisfied.mp3
+5:Hamilton/The Story of Tonight (Reprise).mp3
+6:Hamilton/Wait for It.mp3
+7:Hamilton/Ten Duel Commandments.mp3
+8:Hamilton/Guns and Ships.mp3
+9:Hamilton/Who Lives, Who Dies, Who Tells Your Story.mp3
 playlist_end

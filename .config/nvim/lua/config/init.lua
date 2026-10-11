@@ -1,3 +1,5 @@
+require('config.keymaps')
+require('config.lsp')
 vim.cmd('colorscheme catppuccin-macchiato')
 
 vim.o.relativenumber = true
@@ -25,9 +27,7 @@ vim.opt.whichwrap:append("<>[]hl")
 
 vim.o.clipboard = "unnamedplus"
 
-vim.cmd [[
-	hi Normal guibg=none
-	hi NonText guibg=none
-	hi Normal ctermbg=none
-	hi NonText ctermbg=none
-]]
+vim.o.cursorline = true
+vim.o.cursorlineopt = "both"
+
+require('plugins.lualine').setup()
