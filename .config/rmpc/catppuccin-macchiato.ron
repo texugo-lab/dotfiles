@@ -20,7 +20,7 @@
     ),
     highlighted_item_style: (fg: "#c6a0f6", modifiers: "Bold"),
     current_item_style: (bg: "#494d64", modifiers: "Bold"),
-    borders_style: (fg: "#939ab7"),
+    borders_style: (fg: "#cad3f5"),
     highlight_border_style: (fg: "#cad3f5"),
     symbols: (
         song: "󰝚",
@@ -39,13 +39,13 @@
         debug: (fg: "#a6da95", bg: "#24273a"),
         trace: (fg: "#b7bdf8", bg: "#24273a"),
     ),
-  progress_bar: (
+    progress_bar: (
         symbols: ["", "█", "", "█", ""],
         track_style: (fg: "#1e2030"),
         elapsed_style: (fg: "#c6a0f6"),
         thumb_style: (fg: "#c6a0f6", bg: "#1e2030"),
         use_track_when_empty: false,
-    ), 
+    ),
     scrollbar: (
         symbols: ["│", "█", "", "󰅀"],
         track_style: (fg: "#c6a0f6"),
@@ -54,23 +54,27 @@
     ),
     song_table_format: [
         (
-            prop: (kind: Property(Artist), style: (fg: "#f5a97f", modifiers: "Bold"),
-                default: (kind: Text("Unknown"), style: (fg: "#f5a97f", modifiers: "Bold"))
+            prop: (
+                kind: Property(Artist),
+                style: (fg: "#f5a97f", modifiers: "Bold"),
+                default: (kind: Text("Unknown"), style: (fg: "#f5a97f", modifiers: "Bold")),
             ),
             width: "20%",
-	    alignment: Right,
+            alignment: Right,
         ),
         (
             prop: (kind: Text("-"), style: (fg: "#cad3f5"), default: (kind: Text("Unknown"))),
             width: "1",
             alignment: Center,
         ),
-	(
-            prop: (kind: Property(Title), style: (fg: "#eed49f", modifiers: "Bold"),
-                default: (kind: Text("Unknown"), style: (fg: "#eed49f", modifiers: "Bold"))
+        (
+            prop: (
+                kind: Property(Title),
+                style: (fg: "#eed49f", modifiers: "Bold"),
+                default: (kind: Text("Unknown"), style: (fg: "#eed49f", modifiers: "Bold")),
             ),
             width: "80%",
-	    alignment: Left
+            alignment: Left,
         ),
     ],
 
@@ -78,140 +82,155 @@
     layout: Split(
         direction: Vertical,
         panes: [
+            (pane: Pane(Tabs), size: "2", borders: "TOP | LEFT | RIGHT"),
             (
-                pane: Pane(Tabs),
-                size: "1",
+                size: "2",
+                style: (align: Right),
+				borders: "BOTTOM | LEFT | RIGHT",
+                pane: Split(
+                    direction: Horizontal,
+                    panes: [
+                        (
+                            size: "100%",
+                            pane: Pane(Property(
+                                content: [
+                                    (
+                                        kind: Property(Status(RepeatV2(
+                                            on_label: "    ",
+                                            off_label: "    ",
+                                            on_style: (fg: "#a6da95", modifiers: "Bold"),
+                                            off_style: (fg: "#24273a"),
+                                        ))),
+                                    ),
+                                    (
+                                        kind: Property(Status(RandomV2(
+                                            on_label: "    ",
+                                            off_label: "    ",
+                                            on_style: (fg: "#f5bde6", modifiers: "Bold"),
+                                            off_style: (fg: "#24273a"),
+                                        ))),
+                                    ),
+                                    (
+                                        kind: Property(Status(ConsumeV2(
+                                            on_label: " 󰮯   ",
+                                            off_label: " 󰮯   ",
+                                            oneshot_label: " 󰮯 󰇊 ",
+                                            on_style: (fg: "#eed49f", modifiers: "Bold"),
+                                            off_style: (fg: "#24273a"),
+                                            oneshot_style: (fg: "#8aadf4", modifiers: "Bold"),
+                                        ))),
+                                    ),
+                                    (
+                                        kind: Property(Status(SingleV2(
+                                            on_label: " 󰎤   ",
+                                            off_label: " 󰎦   ",
+                                            oneshot_label: " 󰇊   ",
+                                            off_oneshot_label: " 󱅊   ",
+                                            on_style: (fg: "#b7bdf8", modifiers: "Bold"),
+                                            off_style: (fg: "#24273a"),
+                                            oneshot_style: (fg: "#eed49f", modifiers: "Bold"),
+                                        ))),
+                                    ),
+                                ],
+                                style: (fg: "#cad3f5"),
+                                align: Center,
+                            )),
+                        ),
+                    ],
+                ),
             ),
-            	    (
-		size: "1",
-		style: (align: Right),
-		pane: Split(
-		
-		direction: Horizontal,
-		panes: [
-  (size: "100%", pane: Pane(Property(content: [
-  (kind: Text(" ("), style: (fg: "#cad3f5", modififiers: "Bold")),
-
-    (kind: Property(Status(RepeatV2(on_label: "", off_label: "",
-				 on_style: (fg: "#a6da95", modifiers: "Bold"),
-				 off_style: (fg: "#5b6078", modifiers: "Bold"))))),
-
-	(kind: Text(" | "), style: (fg: "#cad3f5", modififiers: "Bold")),
-
-    (kind: Property(Status(RandomV2(on_label: "", off_label: "",
-				 on_style: (fg: "#f5bde6", modifiers: "Bold"),
-				 off_style: (fg: "#5b6078", modifiers: "Bold"))))), 
-
-    (kind: Text(" | "), style: (fg: "#cad3f5", modififiers: "Bold")),
-
-
-    (kind: Property(Status(ConsumeV2(on_label: "󰮯",off_label: "󰮯",oneshot_label: "󰮯 󰇊",on_style: (fg: "#eed49f", modifiers: "Bold"),off_style: (fg: "#5b6078", modifiers: "Bold"),oneshot_style: (fg: "#8aadf4", modifiers: "Bold"),)))),
-
-    (kind: Text(" | "), style: (fg: "#cdd6f4", modififiers: "Bold")),
-
-	(kind: Property(Status(SingleV2(on_label: "󰎤", off_label: "󰎦", oneshot_label: "󰇊", off_oneshot_label: "󱅊", on_style: (fg: "#b7bdf8", modifiers: "Bold"), off_style: (fg: "#5b6078", modifiers: "Bold"), oneshot_style: (fg: "#eed49f", modifiers: "Bold"))))),
-
-	  (kind: Text(" )"), style: (fg: "#cad3f5", modififiers: "Bold")),
-
-
-  ], style: (fg: "#cad3f5"), align: Right))),
-		]
-
-		),
-
-	    ),
+            (pane: Pane(TabContent), size: "100%", borders: "ALL"),
             (
-                pane: Pane(TabContent),
-                size: "100%",
+                size: "2",
+				borders: "TOP | LEFT | RIGHT",
+                pane: Split(
+                    direction: Horizontal,
+                    panes: [
+                        (
+                            size: "2",
+                            pane: Pane(Property(
+                                content: [(kind: Text("󰕾 "))],
+                                style: (fg: "#cad3f5"),
+                                align: Left,
+                            )),
+                        ),
+                        (
+                            size: "100%",
+                            pane: Pane(Volume(
+                                kind: Slider(
+                                    symbols: (filled: "─", thumb: "●", track: "─"),
+                                    track_style: (fg: "#5b6078"),
+                                    filled_style: (fg: "#c6a0f6"),
+                                    thumb_style: (fg: "#5b6078"),
+                                ),
+                            )),
+                        ),
+                        (
+                            size: "3",
+                            pane: Pane(Property(
+                                content: [(kind: Property(Status(Volume)), style: (fg: "#cad3f5"))],
+                                align: Right,
+                            )),
+                        ),
+                        (
+                            size: "1",
+                            pane: Pane(Property(
+                                content: [(kind: Text("%"))],
+                                style: (fg: "#cad3f5"),
+                                align: Left,
+                            )),
+                        ),
+                    ],
+                ),
             ),
-	    (
-	    	size: "1",
-		pane: Split(
-		direction: Horizontal,
-		panes: [
-		(size: "2", pane: Pane(Property(content: [(kind: Text("󰕾 ")),], style: (fg: "#cad3f5"), align: Left))),
-		(size: "100%", pane: Pane(Volume(
-		kind: Slider(
-		symbols: (
-			filled: "─",
-	                thumb: "●",
-			track: "─",
-		),
-		track_style: (fg: "#5b6078"),
-		filled_style: (fg: "#c6a0f6"),
-		thumb_style: (fg: "#5b6078"),
-
-		)
-
-		))),
-		(size: "3", pane: Pane(Property(content: [(kind: Property(Status(Volume)), style: (fg: "#cad3f5"))], align: Right))),
-		(size: "1", pane: Pane(Property(content: [(kind: Text("%")),], style: (fg: "#cad3f5"), align: Left))),
-		]
-		)
-
-	    ),
-            (
-                pane: Pane(ProgressBar),
-                size: "1",
-            ),
+            (pane: Pane(ProgressBar), size: "2", borders: "BOTTOM | LEFT | RIGHT"),
         ],
     ),
     browser_song_format: [
+        (kind: Group([(kind: Property(Track)), (kind: Text(" "))])),
         (
-            kind: Group([
-                (kind: Property(Track)),
-                (kind: Text(" ")),
-            ])
-        ),
-        (
-            kind: Group([
-                (kind: Property(Artist)),
-                (kind: Text(" - ")),
-                (kind: Property(Title)),
-            ]),
-            default: (kind: Property(Filename))
+            kind: Group([(kind: Property(Artist)), (kind: Text(" - ")), (kind: Property(Title))]),
+            default: (kind: Property(Filename)),
         ),
     ],
 
+    cava: (
+        // symbols that will be used to draw the bar in the visualiser, in ascending order of
+        // fill fraction
+        bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
+        // similar to bar_symbols but these are used for the top-down rendering, meaning for orientation
+        // "Horizontal" and "Top"
+        inverted_bar_symbols: ['▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█'],
 
-	cava: (
-		// symbols that will be used to draw the bar in the visualiser, in ascending order of
-		// fill fraction
-		bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
-		// similar to bar_symbols but these are used for the top-down rendering, meaning for orientation
-		// "Horizontal" and "Top"
-		inverted_bar_symbols: ['▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█'],
+        //bg_color: "", // background color, defaults to rmpc's bg color if not provided
+        bar_width: 3, // width of a single bar in columns
+        bar_spacing: 1, // free space between bars in columns
 
-		//bg_color: "", // background color, defaults to rmpc's bg color if not provided
-		bar_width: 3, // width of a single bar in columns
-		bar_spacing: 1, // free space between bars in columns
+        // Possible values are "Top", "Bottom" and "Horizontal". Top makes the bars go from top to
+        // bottom, "Bottom" is from bottom up, and "Horizontal" is split in the middle with bars going
+        // both down and up from there.
+        // Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
+        orientation: Bottom,
 
-		// Possible values are "Top", "Bottom" and "Horizontal". Top makes the bars go from top to
-		// bottom, "Bottom" is from bottom up, and "Horizontal" is split in the middle with bars going
-		// both down and up from there.
-		// Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
-		orientation: Bottom,
+        // Colors can be configured in three different ways: a single color, different colors
+        // per row and a gradient. You can use the same colors as everywhere else. Only specify
+        // one of these:
 
-		// Colors can be configured in three different ways: a single color, different colors
-		// per row and a gradient. You can use the same colors as everywhere else. Only specify
-		// one of these:
+        // Every bar symbol will be red
+        //bar_color: Single("#c6a0f6"),
 
-		// Every bar symbol will be red
-		//bar_color: Single("#c6a0f6"),
-
-		bar_color: Gradient({
-
-				12: "#8bd5ca",
-				25: "#91d7e3",
-				36: "#7dc4e4",
-				50: "#8aadf4",
-				60: "#c6a0f6",
-				75: "#f5bde6",
-				84: "#ee99a0",
-				100: "#ed8796",    
-		}),
-	),
+        bar_color: Gradient({
+            12: "#8bd5ca",
+            25: "#91d7e3",
+            36: "#7dc4e4",
+            50: "#8aadf4",
+            60: "#c6a0f6",
+            75: "#f5bde6",
+            84: "#ee99a0",
+            100: "#ed8796",
+        }),
+    ),
     lyrics: (
-        timestamp: true
-    )
+		timestamp: false
+	),
 )

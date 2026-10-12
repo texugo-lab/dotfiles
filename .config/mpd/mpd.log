@@ -3776,3 +3776,5 @@ ALSA lib control.c:1575:(snd_ctl_open_noupdate) [error.control] Invalid CTL defa
 2026-10-09T20:01:34 output: Failed to play on "PipeWire Output" (pipewire): no target node available
 2026-10-09T20:01:49 exception: Failed to open "Pulse Output" (pulse); failed to connect: Connection refused
 2026-10-09T22:12:57 player: played "Hamilton/Alexander Hamilton.mp3"
+2026-10-12T10:06:45 config: option "server" on line 21 was not recognized
+2026-10-12T10:06:45 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use

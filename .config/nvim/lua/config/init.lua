@@ -30,4 +30,19 @@ vim.o.clipboard = "unnamedplus"
 vim.o.cursorline = true
 vim.o.cursorlineopt = "both"
 
-require('plugins.lualine').setup()
+local lualine = require('plugins.lualine')
+lualine.setup({
+	colors = {
+		n = lualine.getColorByName('Function', false),
+		t = lualine.getColorByName('Function', false),
+		i = lualine.getColorByName('String', false),
+		R = lualine.getColorByName('String', false),
+		c = lualine.getColorByName('Boolean', false),
+		v = lualine.getColorByName('Keyword', false),
+		V = lualine.getColorByName('Keyword', false),
+		[''] = lualine.getColorByName('Keyword', false),
+		bg = lualine.getColorByName('Normal', true),
+		dim = lualine.getColorByName('LineNr', false),
+		default = lualine.getColorByName('@text', false),
+	}
+})
