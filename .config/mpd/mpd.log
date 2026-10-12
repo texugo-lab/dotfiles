@@ -3778,3 +3778,65 @@ ALSA lib control.c:1575:(snd_ctl_open_noupdate) [error.control] Invalid CTL defa
 2026-10-09T22:12:57 player: played "Hamilton/Alexander Hamilton.mp3"
 2026-10-12T10:06:45 config: option "server" on line 21 was not recognized
 2026-10-12T10:06:45 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:42:46 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:42:46 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:42:56 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:42:58 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:42:58 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:43:09 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:43:19 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:43:29 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:43:39 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:43:49 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:44:00 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:44:10 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:44:20 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:44:30 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:44:40 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:44:50 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:01 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:11 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:21 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:31 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:37 player: played "Hamilton/Stay Alive.mp3"
+2026-10-12T11:45:37 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:45:38 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:48 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:45:58 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:46:08 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:46:18 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:46:28 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:46:38 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:46:49 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:46:59 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:47:09 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:47:19 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:47:24 player: played "Hamilton/Ten Duel Commandments.mp3"
+2026-10-12T11:47:24 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:47:24 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:47:32 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:47:32 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:47:42 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:47:52 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:48:02 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:48:12 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:48:22 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:48:32 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:48:43 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:48:53 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:49:03 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:49:13 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:49:23 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:49:34 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:49:44 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:49:54 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:50:04 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:50:14 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:50:25 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:50:35 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:50:45 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:50:55 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:51:05 output: Failed to play on "PipeWire Output" (pipewire): no target node available
+2026-10-12T11:51:09 player: played "Hamilton/Who Lives, Who Dies, Who Tells Your Story.mp3"
+2026-10-12T11:51:09 exception: Failed to enable output "HTTP Stream" (httpd); Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+2026-10-12T11:51:09 output: Failed to play on "PipeWire Output" (pipewire): no target node available

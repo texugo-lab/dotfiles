@@ -23,3 +23,7 @@
 # Other #
 #########
 .config/zsh-plugins/
+.config/mpd/mpd.log
+.config/mpd/mpdstate
+.config/mpd/mpd.pid
+.config/mpd/mpd.db
