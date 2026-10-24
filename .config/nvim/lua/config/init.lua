@@ -1,4 +1,4 @@
-require('config.keymaps')
+require('config.keymap')
 require('config.lsp')
 vim.cmd('colorscheme catppuccin-macchiato')
 

@@ -25,7 +25,7 @@ theme() {
         elif [[ "${2}" == "Catppuccin-Macchiato" ]]; then export ZTHEME="cpMacchiato"
         elif [[ "${2}" == "Catppuccin-Frappe"    ]]; then export ZTHEME="cpFrappe"
         elif [[ "${2}" == "Catppuccin-Latte"     ]]; then export ZTHEME="cpLatte"
-        elif [[ "${2}" == "Tokyonight-Light"     ]]; then export ZTHEME="tkLight"
+        elif [[ "${2}" == "Tokyonight-Day"     ]]; then export ZTHEME="tkLight"
         elif [[ "${2}" == "Tokyonight-Night"     ]]; then export ZTHEME="tkNight"
         elif [[ "${2}" == "Tokyonight-Storm"     ]]; then export ZTHEME="tkStorm"
         elif [[ "${2}" == "Dracula"              ]]; then export ZTHEME="dcDracula"

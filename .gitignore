@@ -27,3 +27,8 @@
 .config/mpd/mpdstate
 .config/mpd/mpd.pid
 .config/mpd/mpd.db
+.config/mpd/albumart.png
+.config/mpd/albumart.txt
+
+mpd.state.c
+.clang-format

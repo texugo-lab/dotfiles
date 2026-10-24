@@ -1,0 +1,91 @@
+format = """
+$directory$git_branch$git_status$fill $c$lua$python$rust $cmd_duration
+$character
+"""
+
+scan_timeout = 10
+add_newline = true
+
+palette = 'theme'
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❯](bold black)"
+vimcmd_replace_one_symbol = "[❯](bold black)"
+vimcmd_replace_symbol = "[❯](bold black)"
+vimcmd_visual_symbol = "[❯](bold black)"
+
+[directory]
+truncation_length = 1000
+truncate_to_repo = false
+use_os_path_sep = false
+style = 'bold blue'
+disabled = false
+
+[git_branch]
+format = '[· ](black)[$symbol$branch ]($style)'
+style = 'bold yellow'
+disabled = false
+
+[git_status]
+format = '[· ](black)$staged $deleted $renamed $modified $untracked $ahead_behind '
+ahead = "[↑$count](bold green)"
+behind = "[↓$count](bold red)"
+staged = "[+$count](bold green)"
+deleted = "[-$count](bold red)"
+renamed = "[󱓉 $count](bold pink)"
+modified = "[·$count](bold blue)"
+untracked = "[?$count](bold gray)"
+disabled = false
+
+[fill]
+symbol = '·'
+style = 'black'
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "bold yellow"
+disabled = false
+
+# LANGUAGES
+[lua]
+format = "[$symbol(($name )$version)]($style) "
+version_format = "v$raw"
+style = "bold blue"
+symbol = " "
+disabled = false
+[rust]
+format = "[$symbol(($name )$version)]($style) "
+version_format = "v$raw"
+style = "bold red"
+symbol = "󱘗 "
+disabled = false
+[c]
+format = "[$symbol(($name )$version)]($style) "
+version_format = "v$raw"
+style = "bold green"
+symbol = " "
+disabled = false
+[cpp]
+format = "[$symbol(($name )$version)]($style) "
+version_format = "v$raw"
+style = "bold green"
+symbol = " "
+disabled = false
+[python]
+format = "[$symbol(($name )$version)]($style) "
+version_format = "v$raw"
+style = "bold yellow"
+symbol = "󰌠 "
+disabled = false
+
+[palettes.theme]
+blue = "#8aadf4"
+red = "#ed8796"
+green = "#a6da95"
+gray = "#5b6078"
+black = "#363a4f"
+yellow = "#eed49f"
+pink = "#c6a0f6"

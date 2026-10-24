@@ -1,0 +1,8 @@
+[mgr]
+prepend_keymap = [
+	{ on = [ "q" ], run = "plugin autosession -- save-and-quit", desc = "Save session and quit" },
+	{ on = "r", run = "plugin batch-rename-gui", desc = "Rename file or batch rename selection in GUI editor" },
+	{ on   = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+	{ on   = "-", run  = "plugin zoom -1", desc = "Zoom out hovered file" },
+	{ on   = "+", run  = "plugin zoom 1", desc = "Zoom out hovered file" },
+]
